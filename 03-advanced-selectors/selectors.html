@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		img { width: 200px; }
+		p { color: royalblue; }
+
+		section#z {
+			p { color: purple; }
+
+			/* adjacent sibling */
+			p+p { border-top: 3px solid currentcolor; }
+		}
+
+		section#y {
+			p {
+				color: crimson;
+				border-bottom: 3px solid currentcolor;
+			}
+
+			p:last-of-type { border: none; }
+			p:nth-of-type(3) { font-style: italic; }
+		}
+
+		/* subsequent sibling */
+		section {
+			h3~img { border: 5px solid red; }
+		}
+
+		section {
+			em { color: orangered; }
+
+			/* Immediate child */
+			>em { color: lime; }
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<em>Alice</em>
+		<p>
+			<em>Bryan</em>
+			<em>Carol</em>
+			<span>
+				<em>David</em>
+			</span>
+		</p>
+	</section>
+	<section>
+		<h3>Hey!</h3>
+		<p>paragraph.</p>
+		<p>paragraph.</p>
+		<p>paragraph.</p>
+		<p>paragraph.</p>
+		<img src="kitten.jpg">
+	</section>
+
+	<section>
+		<p>paragraph.</p>
+		<p>paragraph.</p>
+		<p>paragraph.</p>
+		<p>paragraph.</p>
+		<img src="kitten.jpg">
+	</section>
+
+
+	<p>This one is just a paragraph, so it'll be blue.</p>
+	<section id="y">
+		<img>
+		<p>This one's inside a section; it'll be purple.</p>
+		<p>This one's inside a section; it'll be purple.</p>
+		<p>This one's inside a section; it'll be purple.</p>
+		<p>This one's inside a section; it'll be purple.</p>
+	</section>
+	<section id="z">
+		<p>This one's inside a section; it'll be purple.</p>
+		<p>This one's inside a section; it'll be purple.</p>
+		<p>This one's inside a section; it'll be purple.</p>
+		<p>This one's inside a section; it'll be purple.</p>
+	</section>
+
+
+</body>
+</html>
